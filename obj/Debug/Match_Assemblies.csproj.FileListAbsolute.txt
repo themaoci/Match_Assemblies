@@ -8,3 +8,13 @@ E:\MAOCI\Github\Match_Assemblies\obj\Debug\Match_Assemblies.pdb
 E:\MAOCI\Github\Match_Assemblies\bin\Debug\dnlib.dll
 E:\MAOCI\Github\Match_Assemblies\bin\Debug\dnpatch.dll
 E:\MAOCI\Github\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CopyComplete
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\bin\Debug\Match_Assemblies.exe.config
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\bin\Debug\Match_Assemblies.exe
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\bin\Debug\Match_Assemblies.pdb
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\bin\Debug\dnlib.dll
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\bin\Debug\dnpatch.dll
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.csprojAssemblyReference.cache
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CoreCompileInputs.cache
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CopyComplete
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.exe
+E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.pdb
