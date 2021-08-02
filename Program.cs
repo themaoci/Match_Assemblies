@@ -97,7 +97,7 @@ namespace Match_Assemblies
         {
             string directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll");
             if (!Directory.Exists(directory)) {
-                Console.WriteLine("dll folder doesnt exist make sure to create one and add assembly files inside");
+                Console.WriteLine("dll folder doesnt exist make sure to create one and add assembly-csharp files inside");
                 Console.ReadKey();
                 return;
             }
