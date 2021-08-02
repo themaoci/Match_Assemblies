@@ -95,8 +95,9 @@ namespace Match_Assemblies
         }
         static void Main(string[] args)
         {
-            if (Directory.Exists()) {
-                Console.WriteLine();
+            string directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll");
+            if (!Directory.Exists(directory)) {
+                Console.WriteLine("dll folder doesnt exist make sure to create one and add assembly files inside");
                 Console.ReadKey();
                 return;
             }
@@ -271,7 +272,7 @@ namespace Match_Assemblies
                 new List<string> { },
                 new List<string> { "AIAmount", "AIDifficulty" }));
             #endregion
-            List<string> fileList = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll")).ToList();
+            List<string> fileList = Directory.GetFiles(directory).ToList();
             
             for (int i = 0; i < fileList.Count; i++) {
                 string path = fileList[i];

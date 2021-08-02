@@ -18,3 +18,13 @@ E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.csp
 E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CopyComplete
 E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.exe
 E:\MAOCI\Github\Match_Assemblies\Match_Assemblies\obj\Debug\Match_Assemblies.pdb
+J:\_git\_JET_REPOS\Match_Assemblies\bin\Debug\Match_Assemblies.exe.config
+J:\_git\_JET_REPOS\Match_Assemblies\bin\Debug\Match_Assemblies.exe
+J:\_git\_JET_REPOS\Match_Assemblies\bin\Debug\Match_Assemblies.pdb
+J:\_git\_JET_REPOS\Match_Assemblies\bin\Debug\dnlib.dll
+J:\_git\_JET_REPOS\Match_Assemblies\bin\Debug\dnpatch.dll
+J:\_git\_JET_REPOS\Match_Assemblies\obj\Debug\Match_Assemblies.csprojAssemblyReference.cache
+J:\_git\_JET_REPOS\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CoreCompileInputs.cache
+J:\_git\_JET_REPOS\Match_Assemblies\obj\Debug\Match_Assemblies.csproj.CopyComplete
+J:\_git\_JET_REPOS\Match_Assemblies\obj\Debug\Match_Assemblies.exe
+J:\_git\_JET_REPOS\Match_Assemblies\obj\Debug\Match_Assemblies.pdb
