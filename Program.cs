@@ -95,8 +95,14 @@ namespace Match_Assemblies
         }
         static void Main(string[] args)
         {
-            List<gclassSearch> ListOfSearchings = new List<gclassSearch>();
+            if (Directory.Exists()) {
+                Console.WriteLine();
+                Console.ReadKey();
+                return;
+            }
 
+            List<gclassSearch> ListOfSearchings = new List<gclassSearch>();
+            #region Adding Searching Names
             ListOfSearchings.Add(new gclassSearch(
                 "MainMenuController", "GClass",
                 new List<string> { "OnProfileChangeApplied", "ShowScreen" },
@@ -264,41 +270,48 @@ namespace Match_Assemblies
                 new List<string> { },
                 new List<string> { },
                 new List<string> { "AIAmount", "AIDifficulty" }));
-
-
-            string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assembly-CSharp_10988.dll");
-            var assembly = ModuleDefMD.Load(path);
-
-            var types = assembly.Types;
-            if(DEBUG)
-                Console.WriteLine(types.Count());
-            var findAll = types.Where(type => !type.Name.Contains("`") && type.Name.StartsWith("Class") && type.Fields.Count == 1 && type.Methods.Count == 1 && type.Properties.Count == 0).ToList();
-            if (findAll.Count > 0 && findAll[0].Fields.Count > 0)
-                Console.WriteLine($"Assembly Game Version: {findAll[0].Fields[0].Constant.Value}");
-            Console.WriteLine("Current => New\n");
-            List<string> UsingList = new List<string>();
-            List<string> InfoList = new List<string>();
+            #endregion
+            List<string> fileList = Directory.GetFiles(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll")).ToList();
             
-            foreach (var gclassSearch in ListOfSearchings) {
-                int searching = 0;
-                string Output = "", FullOutput = "";
+            for (int i = 0; i < fileList.Count; i++) {
+                string path = fileList[i];
+                var assembly = ModuleDefMD.Load(path);
+                var types = assembly.Types;
+                if (DEBUG)
+                    Console.WriteLine(types.Count());
+                var findAll = types.Where(type => !type.Name.Contains("`") && type.Name.StartsWith("Class") && type.Fields.Count == 1 && type.Methods.Count == 1 && type.Properties.Count == 0).ToList();
+                if (findAll.Count > 0 && findAll[0].Fields.Count > 0)
+                    Console.WriteLine($"Assembly Game Version: {findAll[0].Fields[0].Constant.Value}");
+                Console.WriteLine("Current => New\n");
+                List<string> UsingList = new List<string>();
+                List<string> InfoList = new List<string>();
 
-                if (searchingForGClasses(types, ref searching, gclassSearch, ref Output, ref FullOutput))
+                foreach (var gclassSearch in ListOfSearchings)
                 {
-                    UsingList.Add($"using {gclassSearch.OriginalName} = {FullOutput};");
-                    InfoList.Add($"{gclassSearch.OriginalName} => {Output} [{FullOutput}]");
+                    int searching = 0;
+                    string Output = "", FullOutput = "";
+
+                    if (searchingForGClasses(types, ref searching, gclassSearch, ref Output, ref FullOutput))
+                    {
+                        UsingList.Add($"using {gclassSearch.OriginalName} = {FullOutput};");
+                        InfoList.Add($"{gclassSearch.OriginalName} => {Output} [{FullOutput}]");
+                    }
                 }
-            }
-            for (int i = 0; i < UsingList.Count; i++)
-            {
-                Console.WriteLine(UsingList[i]);
-            }
-            Console.WriteLine("");
-            if(DEBUG)
-                for (int i = 0; i < InfoList.Count; i++)
+                for (int j = 0; j < UsingList.Count; j++)
                 {
-                    Console.WriteLine(InfoList[i]);
+                    Console.WriteLine(UsingList[j]);
                 }
+                Console.WriteLine("");
+                if (DEBUG)
+                    for (int k = 0; k < InfoList.Count; k++)
+                    {
+                        Console.WriteLine(InfoList[k]);
+                    }
+
+            }
+            Console.ReadKey();
+
+
             Console.WriteLine("\nFinished... Waiting on key press...");
             Console.ReadKey();
         }
