@@ -1,4 +1,7 @@
-﻿using dnlib.DotNet;
+
+// Created by TheMaoci //
+
+using dnlib.DotNet;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -93,15 +96,9 @@ namespace Match_Assemblies
             public List<string> propertiesItContain = new List<string>();
             public List<string> fieldsItContain = new List<string>();
         }
-        static void Main(string[] args)
+        
+        static List<gclassSearch> CreateList()
         {
-            string directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll");
-            if (!Directory.Exists(directory)) {
-                Console.WriteLine("dll folder doesnt exist make sure to create one and add assembly-csharp files inside");
-                Console.ReadKey();
-                return;
-            }
-
             List<gclassSearch> ListOfSearchings = new List<gclassSearch>();
             #region Adding Searching Names
             ListOfSearchings.Add(new gclassSearch(
@@ -272,6 +269,20 @@ namespace Match_Assemblies
                 new List<string> { },
                 new List<string> { "AIAmount", "AIDifficulty" }));
             #endregion
+            return ListOfSearchings;
+        }
+        
+        static void Main(string[] args)
+        {
+            string directory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "dll");
+            if (!Directory.Exists(directory)) {
+                Console.WriteLine("dll folder doesnt exist make sure to create one and add assembly-csharp files inside");
+                Console.ReadKey();
+                return;
+            }
+            
+            List<gclassSearch> ListOfSearchings = CreateList();
+            
             List<string> fileList = Directory.GetFiles(directory).ToList();
             
             for (int i = 0; i < fileList.Count; i++) {
